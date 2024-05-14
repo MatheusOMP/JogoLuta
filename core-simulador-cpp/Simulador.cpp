@@ -114,6 +114,8 @@ void Simulador::iniciarSimulacao()
     int dano = 0;
     Personagem* personagemAtacante;
     Personagem* personagemDefesa;
+    //A partir daqui utliza-se de max e rand para escolher um personagem aleatorio dentro do vetor
+    //ess personagem nunca e alguem com vida igual a 0
     int max=equipe1.size();
     int a;
     int cont=0;
