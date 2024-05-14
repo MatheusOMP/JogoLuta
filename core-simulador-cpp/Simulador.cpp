@@ -114,11 +114,12 @@ void Simulador::iniciarSimulacao()
     int dano = 0;
     Personagem* personagemAtacante;
     Personagem* personagemDefesa;
-    int a=std::rand()%3;
-    int cont=0;
     int max=equipe1.size();
+    int a;
+    int cont=0;
     while(calcularVidaEquipe(1) > 0 && calcularVidaEquipe(2) > 0)
     {
+        a=std::rand()%max;
         int equipeQueAtaca =  (cont % 2) == 0 ? 1 : 2;
 
         if (a==max)a=0;
@@ -132,8 +133,6 @@ void Simulador::iniciarSimulacao()
             personagemAtacante = proximoPersonagem(equipe2,a);
             personagemDefesa = proximoPersonagem(equipe1,a);
         }
-
-        a++;
         cont++;
         dano = criarCombate(personagemAtacante, personagemDefesa);
         cout << criarSaida(personagemAtacante, personagemDefesa, dano) << endl;
